@@ -8,7 +8,7 @@ import { MorseService } from "./morse.service";
 import {} from "@nestjs/platform-socket.io";
 import { Server } from "socket.io";
 import { Logger, OnModuleInit } from "@nestjs/common";
-@WebSocketGateway()
+@WebSocketGateway({ cors: { origin: "*" } })
 export class MorseGateway implements OnModuleInit {
   @WebSocketServer()
   server: Server;
