@@ -24,6 +24,7 @@ export class MorseGateway implements OnModuleInit {
   @SubscribeMessage("message")
   handleMessage(@MessageBody() message: string) {
     this.logger.log("message recieved");
+    this.logger.log(message);
     this.server.emit("update", message);
   }
 }
